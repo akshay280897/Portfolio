@@ -13,7 +13,7 @@ export class SkillsSectionComponent {
   skillGroups: { label: string; skills: string[] }[] = [
     {
       label: 'Programming & Frameworks',
-      skills: ['C#', '.NET Core', 'Web API'],
+      skills: ['C#', '.NET Core', 'Web API', 'Angular'],
     },
     {
       label: 'Architecture & Systems',
