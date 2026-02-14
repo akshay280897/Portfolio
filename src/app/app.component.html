@@ -1,0 +1,25 @@
+<mat-toolbar class="navbar">
+  <span class="logo">Akshay Potdar</span>
+  <span class="spacer"></span>
+  @for (link of navLinks; track link.id) {
+    <button mat-button (click)="scrollTo(link.id)">{{ link.label }}</button>
+  }
+  <a mat-raised-button color="primary" href="mailto:akipotdar@gmail.com" class="cta-nav">
+    Get in Touch
+  </a>
+</mat-toolbar>
+
+<main>
+  <app-hero-section />
+  <app-about-section id="about" />
+  <app-experience-section id="experience" />
+  <app-projects-section id="projects" />
+  <app-skills-section id="skills" />
+  <app-education-section id="education" />
+  <app-certifications-section id="certifications" />
+  <app-contact-section id="contact" />
+</main>
+
+<footer class="site-footer">
+  <p>© {{ currentYear }} Akshay Potdar. Built with Angular & Angular Material.</p>
+</footer>

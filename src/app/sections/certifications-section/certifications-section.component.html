@@ -1,0 +1,13 @@
+<section class="section">
+  <h2 class="section-title">Certifications & Achievements</h2>
+  <mat-card class="certs-card">
+    <ul class="certs-list">
+      @for (item of items; track item.text) {
+        <li>
+          <mat-icon class="cert-icon">{{ item.icon }}</mat-icon>
+          <span>{{ item.text }}</span>
+        </li>
+      }
+    </ul>
+  </mat-card>
+</section>

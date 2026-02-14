@@ -1,0 +1,125 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$portfolio-primary: mat.m2-define-palette(mat.$m2-indigo-palette, 700, 500, 900);
+$portfolio-accent: mat.m2-define-palette(mat.$m2-amber-palette, A400, A200, A700);
+$portfolio-warn: mat.m2-define-palette(mat.$m2-red-palette);
+$portfolio-theme: mat.m2-define-dark-theme((
+  color: (
+    primary: $portfolio-primary,
+    accent: $portfolio-accent,
+    warn: $portfolio-warn,
+  ),
+  typography: mat.m2-define-typography-config($font-family: '"DM Sans", sans-serif'),
+  density: 0,
+));
+
+@include mat.all-component-themes($portfolio-theme);
+
+:root {
+  --bg-primary: #0a0e14;
+  --bg-card: #131920;
+  --bg-elevated: #1a2129;
+  --bg-card-hover: #1c242e;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --accent: #58a6ff;
+  --accent-soft: rgba(88, 166, 255, 0.15);
+  --accent-amber: #e6b020;
+  --accent-amber-soft: rgba(230, 176, 32, 0.12);
+  --border: #2d3748;
+  --gradient-hero: linear-gradient(135deg, rgba(88, 166, 255, 0.08) 0%, transparent 50%, rgba(230, 176, 32, 0.05) 100%);
+  --gradient-accent: linear-gradient(135deg, #58a6ff 0%, #7c3aed 100%);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.25);
+  --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.35);
+  --radius-card: 14px;
+  --radius-button: 10px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(88, 166, 255, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 60%, rgba(124, 58, 237, 0.08), transparent);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Material Icons – ensure font is used */
+.mat-icon {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mat-mdc-raised-button {
+  text-transform: none;
+  font-weight: 600;
+  border-radius: var(--radius-button);
+}
+
+.mat-mdc-outlined-button,
+.mat-mdc-stroked-button {
+  border-radius: var(--radius-button);
+}
+
+.mat-mdc-card {
+  --mdc-elevated-card-container-color: var(--bg-card);
+  --mdc-elevated-card-container-elevation: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  &:hover {
+    border-color: rgba(88, 166, 255, 0.25);
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+/* Section titles – shared style */
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 28px;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  &::before {
+    content: '';
+    width: 4px;
+    height: 28px;
+    background: var(--gradient-accent);
+    border-radius: 4px;
+  }
+}
+
+/* Chips – softer look */
+.mat-mdc-chip-set {
+  .mat-mdc-chip {
+    --mdc-chip-elevated-container-color: var(--bg-elevated);
+    --mdc-chip-label-text-color: var(--text-secondary);
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+  }
+  .mat-mdc-standard-chip.mat-mdc-chip-selected,
+  .mat-mdc-chip:not(.mat-mdc-chip-disabled):hover {
+    --mdc-chip-elevated-container-color: var(--accent-soft);
+    border-color: rgba(88, 166, 255, 0.3);
+  }
+}

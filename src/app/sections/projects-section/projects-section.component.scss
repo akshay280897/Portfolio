@@ -1,0 +1,52 @@
+.section {
+  padding: 56px 0;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.project-card {
+  padding: 28px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.project-meta {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0 0 12px;
+}
+
+.tech-chips {
+  margin-bottom: 12px;
+  mat-chip-option {
+    font-size: 0.75rem;
+  }
+}
+
+.project-points {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  flex: 1;
+  li {
+    margin-bottom: 6px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

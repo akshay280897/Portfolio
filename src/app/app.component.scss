@@ -1,0 +1,50 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(19, 25, 32, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  min-height: 64px;
+  .logo {
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #e6edf3 0%, #8b949e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .spacer {
+    flex: 1;
+  }
+  button[mat-button] {
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color 0.2s ease;
+    &:hover {
+      color: var(--accent);
+    }
+  }
+  .cta-nav {
+    margin-left: 12px;
+    border-radius: 10px;
+  }
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 28px 24px;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg-card);
+}

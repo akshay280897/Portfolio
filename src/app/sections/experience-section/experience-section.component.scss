@@ -1,0 +1,71 @@
+.section {
+  padding: 56px 0;
+}
+
+.job-card {
+  padding: 30px 36px;
+  margin-bottom: 28px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.job-header {
+  margin-bottom: 8px;
+}
+
+.company {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.location {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.role {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  .period {
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+}
+
+.stack-chips {
+  margin-bottom: 16px;
+  mat-chip-option {
+    font-size: 0.8rem;
+  }
+}
+
+.highlights {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  li {
+    margin-bottom: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.awards {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--accent-amber);
+  .awards-label {
+    font-weight: 600;
+    margin-right: 6px;
+  }
+}

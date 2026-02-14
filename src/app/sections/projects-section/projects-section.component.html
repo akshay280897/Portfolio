@@ -1,0 +1,21 @@
+<section class="section">
+  <h2 class="section-title">Key Projects</h2>
+  <div class="projects-grid">
+    @for (project of projects; track project.name) {
+      <mat-card class="project-card">
+        <h3 class="project-name">{{ project.name }}</h3>
+        <p class="project-meta">{{ project.company }} · {{ project.period }}</p>
+        <mat-chip-set class="tech-chips">
+          @for (t of project.tech; track t) {
+            <mat-chip-option disabled>{{ t }}</mat-chip-option>
+          }
+        </mat-chip-set>
+        <ul class="project-points">
+          @for (point of project.points; track point) {
+            <li>{{ point }}</li>
+          }
+        </ul>
+      </mat-card>
+    }
+  </div>
+</section>

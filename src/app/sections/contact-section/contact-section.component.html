@@ -1,0 +1,24 @@
+<section class="section">
+  <h2 class="section-title">Get in Touch</h2>
+  <mat-card class="contact-card">
+    <p class="contact-intro">Open to technical leadership and backend architecture roles. Let's connect.</p>
+    <div class="contact-links">
+      <a mat-raised-button color="primary" [href]="'mailto:' + email">
+        <mat-icon>email</mat-icon>
+        {{ email }}
+      </a>
+      <a mat-stroked-button [href]="phoneTel">
+        <mat-icon>phone</mat-icon>
+        {{ phone }}
+      </a>
+      <a mat-stroked-button [href]="linkedInUrl" target="_blank" rel="noopener">
+        <mat-icon>open_in_new</mat-icon>
+        LinkedIn
+      </a>
+    </div>
+    <p class="contact-location">
+      <mat-icon>location_on</mat-icon>
+      {{ location }}
+    </p>
+  </mat-card>
+</section>
