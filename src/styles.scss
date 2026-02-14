@@ -37,8 +37,14 @@ $portfolio-theme: mat.m2-define-dark-theme((
   --radius-button: 10px;
 }
 
+/* Responsive breakpoints */
+$breakpoint-mobile: 600px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 960px;
+
 html {
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -109,7 +115,7 @@ body {
   }
 }
 
-/* Chips – softer look */
+/* Chips – softer look + mobile wrap */
 .mat-mdc-chip-set {
   .mat-mdc-chip {
     --mdc-chip-elevated-container-color: var(--bg-elevated);
@@ -121,5 +127,22 @@ body {
   .mat-mdc-chip:not(.mat-mdc-chip-disabled):hover {
     --mdc-chip-elevated-container-color: var(--accent-soft);
     border-color: rgba(88, 166, 255, 0.3);
+  }
+}
+
+/* Mobile: touch-friendly tap targets and overflow */
+@media (max-width: 768px) {
+  .mat-mdc-button,
+  .mat-mdc-raised-button,
+  .mat-mdc-stroked-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    &::before {
+      height: 22px;
+    }
   }
 }

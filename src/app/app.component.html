@@ -1,15 +1,32 @@
 <mat-toolbar class="navbar">
+  @if (isMobile()) {
+    <button mat-icon-button (click)="toggleMenu()" class="menu-btn" aria-label="Open menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+  }
   <span class="logo">Akshay Potdar</span>
   <span class="spacer"></span>
-  @for (link of navLinks; track link.id) {
-    <button mat-button (click)="scrollTo(link.id)">{{ link.label }}</button>
+  @if (!isMobile()) {
+    @for (link of navLinks; track link.id) {
+      <button mat-button (click)="scrollTo(link.id)">{{ link.label }}</button>
+    }
+    <a mat-raised-button color="primary" href="mailto:akipotdar@gmail.com" class="cta-nav">
+      Get in Touch
+    </a>
   }
-  <a mat-raised-button color="primary" href="mailto:akipotdar@gmail.com" class="cta-nav">
-    Get in Touch
-  </a>
 </mat-toolbar>
 
-<main>
+<mat-drawer-container class="drawer-container" hasBackdrop="true">
+  <mat-drawer #drawer mode="over" position="end" class="nav-drawer">
+    <mat-nav-list>
+      @for (link of navLinks; track link.id) {
+        <a mat-list-item (click)="scrollTo(link.id, drawer)">{{ link.label }}</a>
+      }
+      <a mat-list-item href="mailto:akipotdar@gmail.com">Get in Touch</a>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <main>
   <app-hero-section />
   <app-about-section id="about" />
   <app-experience-section id="experience" />
@@ -23,3 +40,5 @@
 <footer class="site-footer">
   <p>© {{ currentYear }} Akshay Potdar. Built with Angular & Angular Material.</p>
 </footer>
+  </mat-drawer-content>
+</mat-drawer-container>

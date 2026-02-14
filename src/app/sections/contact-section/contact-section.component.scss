@@ -58,3 +58,45 @@
     color: var(--accent);
   }
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .contact-card {
+    padding: 32px 24px;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 20px;
+    a {
+      justify-content: center;
+      min-height: 48px;
+    }
+  }
+
+  .contact-intro {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 32px 0;
+  }
+
+  .contact-card {
+    padding: 24px 16px;
+  }
+
+  .contact-location {
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

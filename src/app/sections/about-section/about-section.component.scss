@@ -16,3 +16,27 @@
     color: var(--text-primary);
   }
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .about-card {
+    padding: 24px 20px;
+    p {
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 32px 0;
+  }
+
+  .about-card {
+    padding: 20px 16px;
+  }
+}

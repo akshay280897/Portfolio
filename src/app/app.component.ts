@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, signal, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule, MatDrawer } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 import { HeroSectionComponent } from './sections/hero-section/hero-section.component';
 import { AboutSectionComponent } from './sections/about-section/about-section.component';
 import { ExperienceSectionComponent } from './sections/experience-section/experience-section.component';
@@ -20,6 +23,8 @@ import { ContactSectionComponent } from './sections/contact-section/contact-sect
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatSidenavModule,
+    MatListModule,
     HeroSectionComponent,
     AboutSectionComponent,
     ExperienceSectionComponent,
@@ -32,8 +37,10 @@ import { ContactSectionComponent } from './sections/contact-section/contact-sect
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'Akshay Potdar | Portfolio';
+export class AppComponent implements OnInit {
+  @ViewChild('drawer') drawer!: MatDrawer;
+  private breakpointObserver = inject(BreakpointObserver);
+  isMobile = signal(false);
   currentYear = new Date().getFullYear();
   navLinks = [
     { label: 'About', id: 'about' },
@@ -45,7 +52,18 @@ export class AppComponent {
     { label: 'Contact', id: 'contact' },
   ];
 
-  scrollTo(sectionId: string) {
+  ngOnInit() {
+    this.breakpointObserver.observe('(max-width: 768px)').subscribe((state) => {
+      this.isMobile.set(state.matches);
+    });
+  }
+
+  scrollTo(sectionId: string, drawer?: MatDrawer) {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    if (drawer) drawer.close();
+  }
+
+  toggleMenu() {
+    this.drawer?.toggle();
   }
 }

@@ -27,3 +27,32 @@
   width: 22px;
   height: 22px;
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .certs-card {
+    padding: 24px 20px;
+  }
+
+  .certs-list li {
+    font-size: 0.95rem;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 32px 0;
+  }
+
+  .certs-card {
+    padding: 20px 16px;
+  }
+
+  .certs-list li {
+    font-size: 0.9rem;
+  }
+}

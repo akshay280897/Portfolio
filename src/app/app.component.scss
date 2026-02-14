@@ -8,6 +8,9 @@
   border-bottom: 1px solid var(--border);
   padding: 0 28px;
   min-height: 64px;
+  .menu-btn {
+    margin-right: 8px;
+  }
   .logo {
     font-weight: 700;
     font-size: 1.3rem;
@@ -34,6 +37,23 @@
   }
 }
 
+.drawer-container {
+  background: transparent;
+  min-height: 100vh;
+}
+
+.nav-drawer {
+  width: 280px;
+  max-width: 85vw;
+  background: var(--bg-card) !important;
+  border-left: 1px solid var(--border);
+  .mat-mdc-list-item {
+    color: var(--text-primary);
+    min-height: 48px;
+    font-size: 1rem;
+  }
+}
+
 main {
   max-width: 960px;
   margin: 0 auto;
@@ -47,4 +67,33 @@ main {
   font-size: 0.875rem;
   border-top: 1px solid var(--border);
   background: var(--bg-card);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 16px;
+    min-height: 56px;
+    .logo {
+      font-size: 1.15rem;
+    }
+  }
+
+  main {
+    padding: 0 16px 48px;
+  }
+
+  .site-footer {
+    padding: 20px 16px;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 12px;
+  }
+
+  main {
+    padding: 0 12px 40px;
+  }
 }

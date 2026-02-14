@@ -50,3 +50,36 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 22px 20px;
+  }
+
+  .project-name {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 32px 0;
+  }
+
+  .project-card {
+    padding: 18px 16px;
+  }
+
+  .project-points {
+    font-size: 0.875rem;
+  }
+}

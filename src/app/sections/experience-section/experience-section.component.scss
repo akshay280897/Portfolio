@@ -69,3 +69,41 @@
     margin-right: 6px;
   }
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .job-card {
+    padding: 22px 20px;
+    margin-bottom: 20px;
+  }
+
+  .company {
+    font-size: 1.15rem;
+  }
+
+  .highlights {
+    padding-left: 18px;
+    font-size: 0.95rem;
+  }
+
+  .stack-chips mat-chip-option {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 32px 0;
+  }
+
+  .job-card {
+    padding: 18px 16px;
+  }
+
+  .highlights li {
+    margin-bottom: 6px;
+  }
+}
